@@ -1,8 +1,9 @@
 import pg from "pg";
+import getConfig from "./config.service.js";
 
 const { Client } = pg
 
-const client = new Client('postgresql://postgres:fZJwLyhWWuyAYboFHHkteLfkOkYZPnyQ@switchback.proxy.rlwy.net:33630/railway')
+const client = new Client(getConfig("DATABASE_URL"))
 
 
 const connectToDatabase = async () => {
