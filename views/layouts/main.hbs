@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        header { 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        a  {
+            color: black;
+            text-decoration: none;
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .links a {
+            border: 1px solid cadetblue;
+            padding: 10px 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="/"><h1>FN2 - user / register</h1></a>
+
+        <div class="links">
+            {{#if user}}
+                <h3>{{ user.username }}</h3>
+                <a href="/logout">Chiqish</a>
+            {{else}}
+                <a href="/login">Kirish</a>
+                <a href="/register">Ro'yhatdan o'tish</a>
+            {{/if}}
+        </div>
+    </header>
+
+    <hr>
+
+    {{{ body }}}
+
+</body>
+
+</html>

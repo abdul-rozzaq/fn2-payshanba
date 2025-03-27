@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            width: fit-content;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        input {
+            padding: 4px;
+        }
+
+        .field {
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST">
+        <fieldset>
+            <legend>Kirish</legend>
+            <div class="field">
+                <label for="first">Username</label>
+                <input type="text" name="username" placeholder="Abdurazzoq" id="first" required value="abdurazzoq">
+            </div>
+            <div class="field">
+                <label for="last">Parol</label>
+                <input type="text" name="password" placeholder="* * * * * *" id="last" required value="123456">
+            </div>
+
+
+            <button>Yuborish</button>
+        </fieldset>
+    </form>
+    
+    
+    {{#if message}}
+
+    <h3>Message: {{ message }}</h3>
+
+    {{/if}}
+
+</body>
+
+</html>
