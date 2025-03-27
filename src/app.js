@@ -5,7 +5,7 @@ import { engine } from "express-handlebars";
 import authMiddleware from "./middlewares/auth.middleware.js";
 import loggerMiddleware from "./middlewares/logger.middleware.js";
 import userRouter from "./routes/user.router.js";
-import client from "./services/database.service.js";
+import { connectToDatabase, setupTables } from "./services/database.service.js";
 
 const app = express()
 
@@ -35,10 +35,15 @@ app.get('/logout', (req, res) => {
 })
 
 
+const init = async () => {
 
-client.connect()
+    await connectToDatabase();
+    await setupTables()
 
-app.listen(4000, () => console.log("Server is running on http://localhost:4000"))
+    app.listen(4000, () => console.log("Server is running on http://localhost:4000"))
+}
 
+
+init()
 
 
